@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://5tsfpeqj1nvw" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://bpx4tps07sw5r" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://v8g88vagrbaw" path="res://scenes/balloon.tscn" id="9_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://d5dx1i1d6qng" path="res://assets/sounds/children-yay-sound-effect-hd_cTEoB6Vw.mp3" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -660,6 +661,9 @@ position = Vector2(-665, 224)
 scale = Vector2(1.5599902, 1.6)
 collision_mask = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon" unique_id=152356311]
+[node name="updown" type="AnimationPlayer" parent="Balloon" unique_id=152356311]
 libraries/ = SubResource("AnimationLibrary_kvuet")
 autoplay = &"RESET"
+
+[node name="Cheers" type="AudioStreamPlayer2D" parent="." unique_id=1819729058]
+stream = ExtResource("10_vtaks")
