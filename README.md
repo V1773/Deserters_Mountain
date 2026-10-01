@@ -11,7 +11,10 @@ Link: https://youtu.be/LOhfqjmasi0?si=lI80x0Ko19jHEKmk
 
 
 ## CREDITS & LICENSES:
-  All assets in the pack have been repackaged and many have been modified by Brackeys.
+
+  Balloon Sprite is made by me, V1773.
+  
+  All other assets in the pack have been repackaged and many have been modified by Brackeys.
   
   
   ### LICENSE for all assets:
