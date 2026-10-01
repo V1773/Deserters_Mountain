@@ -446,6 +446,7 @@ collision_enabled = false
 z_index = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=85391849]
+unique_name_in_owner = true
 position = Vector2(0, -7)
 zoom = Vector2(4, 4)
 limit_left = -710
@@ -658,12 +659,14 @@ text = "UwU"
 [node name="Balloon" parent="." unique_id=600830500 instance=ExtResource("9_0tnpc")]
 z_index = 1
 position = Vector2(-665, 224)
-scale = Vector2(1.5599902, 1.6)
-collision_mask = 2
+scale = Vector2(0.977, 1)
 
 [node name="updown" type="AnimationPlayer" parent="Balloon" unique_id=152356311]
 libraries/ = SubResource("AnimationLibrary_kvuet")
 autoplay = &"RESET"
 
 [node name="Cheers" type="AudioStreamPlayer2D" parent="." unique_id=1819729058]
+unique_name_in_owner = true
 stream = ExtResource("10_vtaks")
+
+[connection signal="finished" from="Cheers" to="GameManager" method="_on_cheers_finished"]

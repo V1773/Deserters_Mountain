@@ -104,11 +104,8 @@ _data = {
 }
 
 [node name="Balloon" type="Area2D" unique_id=600830500]
+collision_mask = 2
 script = ExtResource("1_bjw4k")
-
-[node name="Timer" type="Timer" parent="." unique_id=399374265]
-wait_time = 0.3
-one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331505354]
 position = Vector2(1, -8)
