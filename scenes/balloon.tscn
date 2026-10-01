@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://v8g88vagrbaw"]
+
+[ext_resource type="Texture2D" uid="uid://bnjpp5altoy7v" path="res://assets/sprites/balloon1.png" id="1_1eawp"]
+[ext_resource type="Script" uid="uid://cgyc2uxcynd6u" path="res://scripts/balloon.gd" id="1_bjw4k"]
+[ext_resource type="Texture2D" uid="uid://d27jthja6u8it" path="res://assets/sprites/balloon2.png" id="2_bjw4k"]
+[ext_resource type="AudioStream" uid="uid://c3nhxadin23fn" path="res://assets/sounds/Children Yay Sound Effect (HD).mp3" id="4_u045a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u045a"]
+atlas = ExtResource("1_1eawp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0o5a"]
+atlas = ExtResource("2_bjw4k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx2ky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u045a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0o5a")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ba52"]
+radius = 4.0
+
+[node name="Balloon" type="Area2D" unique_id=600830500]
+script = ExtResource("1_bjw4k")
+
+[node name="Timer" type="Timer" parent="." unique_id=399374265]
+wait_time = 0.3
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331505354]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_nx2ky")
+autoplay = "default"
+frame = 1
+frame_progress = 0.880934
+speed_scale = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=194225775]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_2ba52")
+
+[node name="Cheers" type="AudioStreamPlayer2D" parent="." unique_id=997992174]
+stream = ExtResource("4_u045a")
+bus = &"SFX"
